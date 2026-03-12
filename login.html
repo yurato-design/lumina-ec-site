@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ページ説明 -->
+    <meta name="description" content="LUMINAの商品詳細ページ。商品の説明・価格・画像などを掲載。">
+
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="css/reset.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- メインCSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- ファビコン -->
+    <link rel="icon" href="images/favicon.svg">
+
+    <!-- ページごとに変える部分 -->
+    <title>ログイン｜LUMINA</title>
+    <meta name="description" content="LUMINAのログインページ。会員の方はこちらからログインできます。">
+
+  </head>
+
+  <body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="header">
+      <div class="header_inner">
+
+        <!-- ロゴ -->
+        <div class="header_logo">
+          <img src="images/logo.png" alt="LUMINA">
+        </div>
+
+        <!-- PCナビ -->
+        <nav class="header_nav pc_nav">
+          <ul>
+            <li><a href="login.html">ログイン</a></li>
+            <!--
+               ▼ カートリンクを全ページでこの形に統一する理由
+
+            ・ヘッダーは全ページ共通にすることで、ユーザーが迷わず操作できるため
+            ・cart_count（カート内商品の数）を全ページで表示する必要があるため
+            ・JavaScript（menu.js / cart.js）がこの構造を前提に動作するため
+            ・後からデザイン変更する際に、ヘッダーを一括で修正できるようにするため
+            ・ECサイトではヘッダーのナビゲーションを統一するのが基本のため
+            -->
+            <li><a href="cart.html">カート<span id="cart_count"></span></a></li>
+            <li><a href="mypage.html">マイページ</a></li>
+            <li><a href="guide.html">ショッピングガイド</a></li>
+          </ul>
+        </nav>
+
+        <!-- SPナビ -->
+        <div class="sp_nav">
+          <button id="menu_btn">☰</button>
+          <ul id="sp_menu" class="sp_menu">
+            <li><a href="login.html">ログイン</a></li>
+            <li><a href="cart.html">カート<span id="cart_count"></span></a></li>
+            <li><a href="mypage.html">マイページ</a></li>
+            <li><a href="guide.html">ショッピングガイド</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </header>
+    <main>
+      <div class="breadcrumb">
+        <a href="index.html">HOME</a> &gt;
+        <span>ログイン</span>
+      </div>
+
+      <section class="login_section">
+        <h1>ログイン</h1>
+
+        <form class="login_form">
+          <label>
+            メールアドレス<br>
+            <input type="email" placeholder="example@mail.com">
+          </label>
+
+          <label>
+            パスワード<br>
+            <input type="password" placeholder="password">
+          </label>
+
+          <button type="submit" class="login_btn">ログイン</button>
+        </form>
+      </section>
+    </main>
+
+
+    <footer class="footer">
+      <div class="footer_inner">
+
+        <p class="footer_logo">LUMINA</p>
+
+        <ul class="footer_nav">
+          <li><a href="guide.html">ショッピングガイド</a></li>
+          <li><a href="mypage.html">マイページ</a></li>
+          <li><a href="login.html">ログイン</a></li>
+          <li><a href="cart.html">カート</a></li>
+          <li><a href="tokusho.html">特定商取引法に基づく表記</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+        </ul>
+
+        <p class="copy">&copy; LUMINA All Rights Reserved.</p>
+
+      </div>
+    </footer>
+
+    <script src="js/menu.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ページ説明 -->
+    <meta name="description" content="LUMINA公式ショッピングサイト。新作アイテム・人気商品・店舗情報などを掲載。">
+
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="css/reset.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- メインCSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- ファビコン -->
+    <link rel="icon" href="images/favicon.svg">
+
+    <!-- OGP設定 -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:site_name" content="LUMINA">
+    <meta property="og:title" content="LUMINA - Online Shop">
+    <meta property="og:description" content="LUMINA公式ショッピングサイト。新作アイテム・人気商品をチェック。">
+    <meta property="og:image" content="https://example.com/images/ogp.png">
+
+    <!-- ページごとに変える部分 -->
+    <title>プライバシーポリシー｜LUMINA</title>
+    <meta name="description" content="LUMINAのプライバシーポリシー。個人情報の取り扱いについて記載しています。">
+    
+  </head>
+
+  <body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="header">
+      <div class="header_inner">
+
+        <!-- ロゴ -->
+        <div class="header_logo">
+          <img src="images/logo.png" alt="LUMINA">
+        </div>
+
+        <!-- PCナビ -->
+        <nav class="header_nav pc_nav">
+          <ul>
+            <li><a href="login.html">ログイン</a></li>
+            <li><a href="cart.html">カート<span id="cart_count"></span></a></li>
+            <li><a href="mypage.html">マイページ</a></li>
+            <li><a href="guide.html">ショッピングガイド</a></li>
+          </ul>
+        </nav>
+
+        <!-- SPナビ -->
+        <div class="sp_nav">
+          <button id="menu_btn">☰</button>
+          <ul id="sp_menu" class="sp_menu">
+            <li><a href="login.html">ログイン</a></li>
+            <li><a href="cart.html">カート<span id="cart_count"></span></a></li>
+            <li><a href="mypage.html">マイページ</a></li>
+            <li><a href="guide.html">ショッピングガイド</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </header>
+
+    <main>
+      <!-- パンくず -->
+      <div class="breadcrumb">
+        <a href="index.html">HOME</a> &gt;
+        <span>プライバシーポリシー</span>
+      </div>
+
+      <section class="privacy_section page_section">
+        <h1>プライバシーポリシー</h1>
+
+        <h2>個人情報の利用目的</h2>
+        <p>当店は、お客様からお預かりした個人情報を以下の目的で利用します。</p>
+        <ul>
+          <li>商品の発送</li>
+          <li>お問い合わせ対応</li>
+          <li>サービス向上のための分析</li>
+        </ul>
+
+        <h2>個人情報の第三者提供</h2>
+        <p>法令に基づく場合を除き、第三者に提供することはありません。</p>
+
+        <h2>個人情報の管理</h2>
+        <p>適切な安全対策を講じ、個人情報の漏洩・紛失を防止します。</p>
+
+        <h2>お問い合わせ</h2>
+        <p>info@example.com までご連絡ください。</p>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer_inner">
+
+        <p class="footer_logo">LUMINA</p>
+
+        <ul class="footer_nav">
+          <li><a href="guide.html">ショッピングガイド</a></li>
+          <li><a href="mypage.html">マイページ</a></li>
+          <li><a href="login.html">ログイン</a></li>
+          <li><a href="cart.html">カート</a></li>
+          <li><a href="tokusho.html">特定商取引法に基づく表記</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+        </ul>
+
+        <p class="copy">&copy; LUMINA All Rights Reserved.</p>
+
+      </div>
+    </footer>
+
+    <script src="js/menu.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
+</html>

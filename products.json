@@ -1,0 +1,124 @@
+[
+  {
+    "id": 1,
+    "name": "APPLE BERRY Tシャツ",
+    "price": "10000",
+    "category": "fashion",
+    "images": [
+      "images/item_01.jpg",
+      "images/item_01_2.jpg",
+      "images/item_01_3.jpg"
+    ],
+    "description": "着心地の良いコットン素材のTシャツ。"
+  },
+  {
+    "id": 2,
+    "name": "APPLE BERRY マグカップ",
+    "price": "1200",
+    "category": "mug",
+    "images": [
+      "images/item_02.jpg"
+    ],
+    "description": "毎日のコーヒータイムにぴったりのマグカップ。"
+  },
+  {
+    "id": 3,
+    "name": "APPLE BERRY オリジナルバッグ",
+    "price": "3500",
+    "category": "bag",
+    "images": [
+      "images/item_03.jpg"
+    ],
+    "description": "シンプルで使いやすいオリジナルバッグです。"
+  },
+  {
+    "id": 4,
+    "name": "オリジナルベルト 黒",
+    "price": "10000",
+    "category": "fashion",
+    "images": [
+      "images/item_04.jpg"
+    ],
+    "description": "シンプルで使いやすいベルトです。"
+  },
+  {
+    "id": 5,
+    "name": "オリジナルベルト 茶",
+    "price": "10000",
+    "category": "fashion",
+    "images": [
+      "images/item_05.jpg"
+    ],
+    "description": "商品5の説明文です。"
+  },
+  {
+    "id": 6,
+    "name": "商品名6",
+    "price": "10000",
+    "category": "fashion",
+    "images": [
+      "images/item_06.jpg"
+    ],
+    "description": "商品6の説明文です。"
+  },
+  {
+    "id": 7,
+    "name": "商品名7",
+    "price": "10000",
+    "category": "fashion",
+    "images": [
+      "images/item_07.jpg"
+    ],
+    "description": "商品7の説明文です。"
+  },
+  {
+    "id": 8,
+    "name": "商品名8",
+    "price": "10000",
+    "category": "mug",
+    "images": [
+      "images/item_08.jpg"
+    ],
+    "description": "商品8の説明文です。"
+  },
+  {
+    "id": 9,
+    "name": "商品名9",
+    "price": "10000",
+    "category": "mug",
+    "images": [
+      "images/item_09.jpg"
+    ],
+    "description": "商品9の説明文です。"
+  },
+  {
+    "id": 10,
+    "name": "商品名10",
+    "price": "10000",
+    "category": "bag",
+    "images": [
+      "images/item_10.jpg"
+    ],
+    "description": "商品10の説明文です。"
+  },
+  {
+    "id": 11,
+    "name": "商品名11",
+    "price": "10000",
+    "category": "fashion",
+    "images": [
+      "images/item_11.jpg"
+    ],
+    "description": "商品11の説明文です。"
+  },
+  {
+    "id": 12,
+    "name": "商品名12",
+    "price": "10000",
+    "category": "bag",
+    "images": [
+      "images/item_12.jpg"
+    ],
+    "description": "商品12の説明文です。"
+  }
+]

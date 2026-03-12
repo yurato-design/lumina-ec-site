@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ページ説明 -->
+    <meta name="description" content="LUMINAの商品詳細ページ。商品の説明・価格・画像などを掲載。">
+
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="css/reset.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- メインCSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- ファビコン -->
+    <link rel="icon" href="images/favicon.svg">
+
+    <!-- ページごとに変える部分 -->
+    <title>商品詳細｜LUMINA</title>
+    <meta name="description" content="LUMINAの商品詳細ページ。商品の画像・説明・価格をご確認いただけます。">
+
+  </head>
+
+  <body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="header">
+      <div class="header_inner">
+
+        <!-- ロゴ -->
+        <div class="header_logo">
+          <img src="images/logo.png" alt="LUMINA">
+        </div>
+
+        <!-- PCナビ -->
+        <nav class="header_nav pc_nav">
+          <ul>
+            <li><a href="login.html">ログイン</a></li>
+            <li><a href="cart.html">カート<span id="cart_count"></span></a></li>
+            <li><a href="mypage.html">マイページ</a></li>
+            <li><a href="guide.html">ショッピングガイド</a></li>
+          </ul>
+        </nav>
+
+        <!-- SPナビ -->
+        <div class="sp_nav">
+          <button id="menu_btn">☰</button>
+          <ul id="sp_menu" class="sp_menu">
+            <li><a href="login.html">ログイン</a></li>
+            <li><a href="cart.html">カート<span id="cart_count"></span></a></li>
+            <li><a href="mypage.html">マイページ</a></li>
+            <li><a href="guide.html">ショッピングガイド</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+    <main>
+
+      <!-- パンくず -->
+      <div class="breadcrumb">
+        <a href="index.html">HOME</a> &gt;
+        <a href="list.html">カテゴリー名</a> &gt;
+        <span>商品名</span>
+      </div>
+      <!-- 一覧に戻る -->
+      <div class="back_btn_wrap">
+        <a href="list.html" class="back_btn">一覧に戻る</a>
+      </div>
+
+
+      <!-- =========================
+           商品詳細（テンプレ）
+      ========================== -->
+      <section class="product_detail">
+
+        <div class="product_detail_inner">
+
+          <!-- 商品画像エリア -->
+          <div class="product_images">
+
+            <!-- メイン画像（★ここを商品ごとに変更） -->
+            <div class="main_image">
+              <img src="images/item_01.jpg" alt="商品名">
+            </div>
+
+            <!-- サムネイル（★必要に応じて差し替え） -->
+            <div class="thumb_list">
+<!--   JSで自動生成
+              <img src="images/item_01.jpg" class="thumb active" alt="">
+              <img src="images/item_02.jpg" class="thumb" alt="">
+              <img src="images/item_03.jpg" class="thumb" alt="">
+-->
+            </div>
+
+          </div>
+
+          <!-- 商品情報エリア -->
+          <div class="product_info">
+
+            <!-- 商品名（★差し替え） -->
+            <h1 class="product_title">商品名が入ります</h1>
+
+            <!-- 価格（★差し替え） -->
+            <p class="product_price">￥10,000（tax in）</p>
+
+            <!-- 説明文（★差し替え） -->
+            <p class="product_description">
+              商品の説明文が入ります。素材・サイズ・特徴などを記載します。
+            </p>
+
+            <!-- カートボタン（そのままでOK） -->
+            <button id="add_to_cart" class="add_cart_btn">カートに入れる</button>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    <!-- =========================
+        最近見た商品
+    ========================= -->
+    <section class="recent_items">
+      <h2 class="section_title_img">
+        <picture>
+          <!-- スマホ用（768px以下） -->
+          <source srcset="images/recent_pro_sp@2x.png" media="(max-width: 768px)">
+          <!-- PC用 -->
+          <img src="images/recent_pro_pc.png" alt="最近見た商品">
+        </picture>
+      </h2>
+      <div id="recent_list" class="item_grid small"></div>
+    </section>
+
+    </main>
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="footer">
+      <div class="footer_inner">
+
+        <p class="footer_logo">LUMINA</p>
+
+        <ul class="footer_nav">
+          <li><a href="guide.html">ショッピングガイド</a></li>
+          <li><a href="mypage.html">マイページ</a></li>
+          <li><a href="login.html">ログイン</a></li>
+          <li><a href="cart.html">カート</a></li>
+          <li><a href="tokusho.html">特定商取引法に基づく表記</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+        </ul>
+
+        <p class="copy">&copy; LUMINA All Rights Reserved.</p>
+
+      </div>
+    </footer>
+
+    <!-- JS -->
+    <script src="js/menu.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/products.js"></script>
+    
+  </body>
+</html>

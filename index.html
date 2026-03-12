@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- ページ説明 -->
+    <meta name="description" content="LUMINA公式ショッピングサイト。新作アイテム・人気商品・店舗情報などを掲載。">
+
+    <!-- リセットCSS -->
+    <link rel="stylesheet" href="css/reset.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- メインCSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- ファビコン -->
+    <link rel="icon" href="images/favicon.svg">
+
+    <!-- OGP設定 -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:site_name" content="LUMINA">
+    <meta property="og:title" content="LUMINA - Online Shop">
+    <meta property="og:description" content="LUMINA公式ショッピングサイト。新作アイテム・人気商品をチェック。">
+    <meta property="og:image" content="https://example.com/images/ogp.png">
+
+    <!-- ページごとに変える部分 -->
+    <title>LUMINA｜公式オンラインショップ</title>
+    <meta name="description" content="LUMINA公式ショッピングサイト。新作アイテム・人気商品・店舗情報などを掲載。">
+
+  </head>
+
+  <body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+    <header class="header">
+      <div class="header_inner">
+
+        <!-- ロゴ -->
+        <div class="header_logo">
+          <img src="images/logo.png" alt="LUMINA">
+        </div>
+
+        <!-- PCナビ -->
+        <nav class="header_nav pc_nav">
+          <ul>
+            <li><a href="login.html">ログイン</a></li>
+            <li><a href="cart.html">カート<span id="cart_count"></span></a></li>
+            <li><a href="mypage.html">マイページ</a></li>
+            <li><a href="guide.html">ショッピングガイド</a></li>
+          </ul>
+        </nav>
+
+        <!-- SPナビ -->
+        <div class="sp_nav">
+          <button id="menu_btn">☰</button>
+
+          <ul id="sp_menu" class="sp_menu">
+
+            <!-- ITEM SEARCH（ドロップダウン） -->
+            <li class="sp_section_title dropdown_btn">ITEM SEARCH</li>
+            <ul class="dropdown_content">
+              <li>
+                <input type="text" id="search_input_sp" placeholder="Search...">
+              </li>
+            </ul>
+
+            <!-- ログイン系 -->
+            <li><a href="login.html">ログイン</a></li>
+            <li><a href="cart.html">カート<span id="cart_count"></span></a></li>
+            <li><a href="mypage.html">マイページ</a></li>
+            <li><a href="guide.html">ショッピングガイド</a></li>
+
+            <!-- CATEGORIES（ドロップダウン） -->
+            <li class="sp_section_title dropdown_btn">CATEGORIES</li>
+            <ul class="dropdown_content">
+              <li><a href="list.html?category=bag">バッグ</a></li>
+              <li><a href="list.html?category=mug">マグカップ</a></li>
+              <li><a href="list.html?category=fashion">ファッション</a></li>
+            </ul>
+
+            <!-- ABOUT（リンクのみ） -->
+            <li class="sp_section_title">
+              <a href="about.html">ABOUT</a>
+            </li>
+
+            <!-- SHOP INFO（リンクのみ） -->
+            <li class="sp_section_title">
+              <a href="shopinfo.html">SHOP INFO</a>
+            </li>
+
+          </ul>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- =========================
+         MAIN（ここから2カラム構成）
+    ========================== -->
+    <main>
+
+      <div class="main_wrapper">
+
+        <!-- ▼ 左カラム：スライダー＋商品一覧 -->
+        <div class="main_content">
+
+          <!-- =========================
+               スライダー
+          ========================== -->
+          <div class="slider">
+            <div class="slides">
+              <div class="slide"><img src="images/ca_banner.jpg" alt="メインバナー"></div>
+              <div class="slide"><img src="images/ca_banner_02.jpg" alt="商品1"></div>
+              <div class="slide"><img src="images/ca_banner_03.jpg" alt="商品2"></div>
+
+              <!-- ★ 1枚目のコピー（ループ用） -->
+              <div class="slide"><img src="images/ca_banner.jpg" alt="メインバナー"></div>
+            </div>
+
+            <!-- 前後ボタン -->
+            <button class="prev">‹</button>
+            <button class="next">›</button>
+          </div>
+
+          <!-- ドット -->
+          <div class="indicators">
+            <span class="dot active"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+          </div>
+
+          <!-- =========================
+               NEW ITEMS
+          ========================== -->
+          <section class="newitems">
+            <h2 class="section_title_img">
+              <picture>
+                <!-- スマホ用（768px以下） -->
+                <source srcset="images/title_newitems@2x.png" media="(max-width: 768px)">
+                <!-- PC用 -->
+                <img src="images/title_newitems.png" alt="NEW ITEMS">
+              </picture>
+            </h2>
+
+            <div class="item_grid">
+
+              <div class="item">
+                <a href="products.html?id=1" class="item_link">
+                  <img src="images/item_01.jpg" alt="">
+                  <p>商品名が入ります</p>
+                  <p>￥10,000（tax in）</p>
+                </a>
+              </div>
+
+              <div class="item">
+                <a href="products.html?id=2" class="item_link">
+                  <img src="images/item_02.jpg" alt="">
+                  <p>商品名が入ります</p>
+                  <p>￥10,000（tax in）</p>
+                </a>
+              </div>
+
+              <div class="item">
+                <a href="products.html?id=3" class="item_link">
+                  <img src="images/item_03.jpg" alt="">
+                  <p>商品名が入ります</p>
+                  <p>￥10,000（tax in）</p>
+                </a>
+              </div>
+
+              <!-- ▼ ここから2段目（追加） -->
+              <div class="item">
+                <a href="products.html?id=4" class="item_link">
+                  <img src="images/item_04.jpg" alt="">
+                  <p>商品名が入ります</p>
+                  <p>￥10,000（tax in）</p>
+                </a>
+              </div>
+
+              <div class="item">
+                <a href="products.html?id=5" class="item_link">
+                  <img src="images/item_05.jpg" alt="">
+                  <p>商品名が入ります</p>
+                  <p>￥10,000（tax in）</p>
+                </a>
+              </div>
+
+              <div class="item">
+                <a href="products.html?id=6" class="item_link">
+                  <img src="images/item_06.jpg" alt="">
+                  <p>商品名が入ります</p>
+                  <p>￥10,000（tax in）</p>
+                </a>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- =========================
+               POPULAR ITEMS
+          ========================== -->
+          <h2 class="section_title_img">
+            <picture>
+              <!-- スマホ用（768px以下） -->
+              <source srcset="images/title_popular@2x.png" media="(max-width: 768px)">
+              <!-- PC用 -->
+              <img src="images/title_popular.png" alt="POPULAR ITEMS">
+            </picture>
+          </h2>
+
+            <div class="item_grid">
+
+              <div class="item">
+                <a href="products.html?id=7" class="item_link">
+                  <img src="images/item_07.jpg" alt="">
+                  <p>商品名が入ります</p>
+                  <p>￥10,000（tax in）</p>
+                </a>
+              </div>
+
+              <div class="item">
+                <a href="products.html?id=8" class="item_link">
+                  <img src="images/item_08.jpg" alt="">
+                  <p>商品名が入ります</p>
+                  <p>￥10,000（tax in）</p>
+                </a>
+              </div>
+
+              <div class="item">
+                <a href="products.html?id=9" class="item_link">
+                  <img src="images/item_09.jpg" alt="">
+                  <p>商品名が入ります</p>
+                  <p>￥10,000（tax in）</p>
+                </a>
+              </div>
+
+              <!-- ▼ ここから2段目（追加） -->
+              <div class="item">
+                <a href="products.html?id=10" class="item_link">
+                  <img src="images/item_10.jpg" alt="">
+                  <p>商品名が入ります</p>
+                  <p>￥10,000（tax in）</p>
+                </a>
+              </div>
+
+              <div class="item">
+                <a href="products.html?id=11" class="item_link">
+                  <img src="images/item_11.jpg" alt="">
+                  <p>商品名が入ります</p>
+                  <p>￥10,000（tax in）</p>
+                </a>
+              </div>
+
+              <div class="item">
+                <a href="products.html?id=12" class="item_link">
+                  <img src="images/item_12.jpg" alt="">
+                  <p>商品名が入ります</p>
+                  <p>￥10,000（tax in）</p>
+                </a>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- =========================
+               SHOPPING GUIDE
+          ========================== -->
+          <section class="guide_section">
+
+            <div class="section_title_wrap">
+              <h2 class="section_title_img">
+                <picture>
+                  <!-- スマホ用（768px以下） -->
+                  <source srcset="images/title_guide@2x.png" media="(max-width: 768px)">
+                  <!-- PC用 -->
+                  <img src="images/title_guide.png" alt="SHOPPING GUIDE">
+                </picture>
+              </h2>
+            </div>
+            <div class="guide_box">
+
+              <div class="guide_col">
+                <h3>お届けについて</h3>
+                <div class="guide_item">
+
+                  <!-- 画像だけのコンテナ -->
+                  <div class="guide_img_wrap">
+                    <img src="images/otodoke_banner.png" alt="">
+                  </div>
+
+                  <!-- テキストのコンテナ -->
+                  <div class="guide_text_wrap">
+                    <p class="guide_label">■宅配便</p>
+                    <p class="guide_text">送料 ¥600(税込)～、又は 無料</p>
+                  </div>
+
+                  <div class="guide_text_wrap">
+                    <p class="guide_label">■ゆうパック</p>
+                    <p class="guide_text">ポスト投函となります。日時指定不可</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="guide_col">
+                <h3>決済について</h3>
+                <div class="guide_item">
+                  <div class="guide_text_wrap">
+                    <p class="guide_label">■カード決算</p>
+                    <img src="images/cards.png" alt="">
+                  </div>
+
+                  <div class="guide_text_wrap">
+                    <p class="guide_label">■代金引換</p>
+                    <p class="guide_text">代引き手数料が別途かかります。</p>
+                  </div>
+
+                  <div class="guide_text_wrap">
+                    <p class="guide_label">■銀行振込</p>
+                    <p class="guide_text">お振込手数料お客様負担。<br>ご入金後の発送となります。</p>
+                  </div>
+                
+                </div>
+              </div>
+
+            </div>
+
+          </section>
+
+        </div><!-- /main_content -->
+
+
+        <!-- ▼ 右カラム：サイドメニュー -->
+        <aside class="sidebar">
+
+          <!-- ITEM SEARCH -->
+          <div class="sidebar_box">
+            <h2>ITEM SEARCH</h2>
+              <div class="search_input_wrap">
+                <input type="text" id="search_input" placeholder="Search...">
+                <div class="search_icon_box" id="search_btn">
+                  <img src="images/search_icon.png" alt="検索" class="search_icon">
+                </div>
+              </div>
+          </div>
+
+          <!-- CATEGORIES -->
+          <div class="sidebar_box">
+            <h2>CATEGORIES</h2>
+            <ul>
+              <li><a href="list.html?category=bag">バッグ</a></li>
+              <li><a href="list.html?category=mug">マグカップ</a></li>
+              <li><a href="list.html?category=fashion">ファッション</a></li>
+            </ul>
+          </div>
+
+          <!-- ABOUT -->
+          <div class="sidebar_box">
+            <h2>ABOUT</h2>
+            <img src="images/about_img.jpg" alt="">
+            <p>店名の簡単な説明が入ります。</p>
+            <a href="about.html" class="more_btn">MORE</a>
+          </div>
+
+          <!-- SHOP INFO -->
+          <div class="sidebar_box">
+            <h2>SHOP INFO</h2>
+            <img src="images/shopinfo_img.jpg" alt="">
+            <p>店舗情報の説明が入ります。</p>
+            <a href="shopinfo.html" class="more_btn">MORE</a>
+          </div>
+
+        </aside><!-- /sidebar -->
+
+      </div><!-- /main_wrapper -->
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+    <footer class="footer">
+      <div class="footer_inner">
+
+        <p class="footer_logo">LUMINA</p>
+
+        <ul class="footer_nav">
+          <li><a href="tokusho.html">特定商取引法に基づく表記</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="mypage.html">マイページ</a></li>
+        </ul>
+
+        <p class="copy">&copy; LUMINA All Rights Reserved.</p>
+
+      </div>
+    </footer>
+
+    <!-- JS -->
+     <!--
+      ▼ JS 読み込みルール
+
+      ■ 全ページ共通
+        - menu.js … ヘッダーのスマホメニュー開閉
+        - cart.js … カート数（cart_count）の更新＆カート処理
+
+      ■ index.html
+        - slider.js … トップページのスライダー用
+
+      ■ products.html
+        - products.js … 商品詳細をJSONから生成
+        - slider.js … 商品画像スライダー用（使う場合）
+
+      ■ list.html / cart.html
+        - 特別な動きがなければ共通JSのみ
+    -->
+
+    <script src="js/slider.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/search.js"></script>
+
+  </body>
+</html>

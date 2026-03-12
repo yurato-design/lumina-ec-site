@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- ページ説明（固有） -->
+  <meta name="description" content="LUMINAの店舗紹介ページです。ブランドコンセプトやショップの想いを掲載。">
+
+  <!-- リセットCSS -->
+  <link rel="stylesheet" href="css/reset.css">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Catamaran:wght@400;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- メインCSS -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- ファビコン -->
+  <link rel="icon" href="images/favicon.svg">
+
+  <!-- ページタイトル -->
+  <title>ABOUT | LUMINA</title>
+</head>
+
+<body>
+  <!-- SPヘッダー（ロゴ＋ハンバーガー） -->
+  <header class="header">
+    <div class="header_inner">
+
+      <div class="header_logo">
+        <img src="images/logo.png" alt="LUMINA">
+      </div>
+
+      <nav class="header_nav pc_nav">
+        <ul>
+          <li><a href="login.html">ログイン</a></li>
+          <li><a href="cart.html">カート<span id="cart_count"></span></a></li>
+          <li><a href="mypage.html">マイページ</a></li>
+          <li><a href="guide.html">ショッピングガイド</a></li>
+        </ul>
+      </nav>
+
+      <!-- SPメニュー（index と同じものをここにも入れる） -->
+      <div class="sp_nav">
+        <ul id="sp_menu" class="sp_menu">
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="login.html">ログイン</a></li>
+          <li><a href="cart.html">カート<span id="cart_count"></span></a></li>
+          <li><a href="mypage.html">マイページ</a></li>
+          <li><a href="guide.html">ショッピングガイド</a></li>
+
+          <!-- ITEM SEARCH（ドロップダウン） -->
+          <li class="sp_section_title dropdown_btn">ITEM SEARCH</li>
+          <ul class="dropdown_content">
+            <li><input type="text" id="search_input_sp" placeholder="Search..."></li>
+          </ul>
+
+          <!-- CATEGORIES -->
+          <li class="sp_section_title dropdown_btn">CATEGORIES</li>
+          <ul class="dropdown_content">
+            <li><a href="list.html?category=bag">バッグ</a></li>
+            <li><a href="list.html?category=mug">マグカップ</a></li>
+            <li><a href="list.html?category=fashion">ファッション</a></li>
+          </ul>
+
+          <!-- ABOUT / SHOP INFO -->
+          <li class="sp_section_title"><a href="about.html">ABOUT</a></li>
+          <li class="sp_section_title"><a href="shopinfo.html">SHOP INFO</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ★ PC用パンくず（商品詳細ページから移植） -->
+    <div class="breadcrumb">
+      <a href="index.html">HOME</a> &gt;
+      <span>ABOUT</span>
+    </div>
+
+    <!-- セクションタイトル（PCの黄色帯に寄せたデザイン） -->
+    <h2 class="page_title">ABOUT</h2>
+
+    <!-- ★ SP/PC 共通の白カード -->
+    <div class="page_container">
+      <img src="images/about_img.jpg" alt="ABOUT" class="page_image">
+
+      <p>
+        LUMINA は、日常を少しだけ豊かにするアイテムをセレクトしたオンラインショップです。<br>
+        シンプルで洗練されたデザインを中心に、長く使えるアイテムを取り揃えています。
+      </p>
+    </div>
+
+  </main>
+
+  <!-- =========================
+       FOOTER（商品詳細ページから移植）
+  ========================== -->
+  <footer class="footer">
+    <div class="footer_inner">
+
+      <p class="footer_logo">LUMINA</p>
+
+      <ul class="footer_nav">
+        <li><a href="guide.html">ショッピングガイド</a></li>
+        <li><a href="mypage.html">マイページ</a></li>
+        <li><a href="login.html">ログイン</a></li>
+        <li><a href="cart.html">カート</a></li>
+        <li><a href="tokusho.html">特定商取引法に基づく表記</a></li>
+        <li><a href="privacy.html">プライバシーポリシー</a></li>
+      </ul>
+
+      <p class="copy">&copy; LUMINA All Rights Reserved.</p>
+
+    </div>
+  </footer>
+
+  <script src="js/menu.js"></script>
+  <script src="js/cart.js"></script>
+
+</body>
+
+
+</html>

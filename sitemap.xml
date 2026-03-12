@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <!-- トップページ -->
+  <url>
+    <loc>https://yurato-design.github.io/lumina-ec-site/index.html</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- 商品一覧 -->
+  <url>
+    <loc>https://yurato-design.github.io/lumina-ec-site/list.html</loc>
+  </url>
+
+  <!-- 商品詳細（テンプレ1ページ） -->
+  <url>
+    <loc>https://yurato-design.github.io/lumina-ec-site/products.html</loc>
+  </url>
+
+  <!-- ABOUT -->
+  <url>
+    <loc>https://yurato-design.github.io/lumina-ec-site/about.html</loc>
+  </url>
+
+  <!-- SHOP INFO -->
+  <url>
+    <loc>https://yurato-design.github.io/lumina-ec-site/shopinfo.html</loc>
+  </url>
+
+  <!-- カート -->
+  <url>
+    <loc>https://yurato-design.github.io/lumina-ec-site/cart.html</loc>
+  </url>
+
+  <!-- ショッピングガイド -->
+  <url>
+    <loc>https://yurato-design.github.io/lumina-ec-site/guide.html</loc>
+  </url>
+
+  <!-- プライバシーポリシー -->
+  <url>
+    <loc>https://yurato-design.github.io/lumina-ec-site/privacy.html</loc>
+  </url>
+
+  <!-- 特定商取引法 -->
+  <url>
+    <loc>https://yurato-design.github.io/lumina-ec-site/tokusho.html</loc>
+  </url>
+
+  <!-- マイページ -->
+  <url>
+    <loc>https://yurato-design.github.io/lumina-ec-site/mypage.html</loc>
+  </url>
+
+  <!-- ログイン -->
+  <url>
+    <loc>https://yurato-design.github.io/lumina-ec-site/login.html</loc>
+  </url>
+
+  <!-- 404ページ -->
+  <url>
+    <loc>https://yurato-design.github.io/lumina-ec-site/404.html</loc>
+  </url>
+
+</urlset>
+<!-- 使い方
+・"YOUR-DOMAIN"の部分だけ後で差し替える
+・例えば GitHub Pages なら
+　https://ユーザー名.github.io/リポジトリ名/
+・Xserver なら
+　https://example.com/
+これで どのサイトでも流用できるテンプレ になる。-->
