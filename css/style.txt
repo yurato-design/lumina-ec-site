@@ -1,0 +1,1353 @@
+@charset "utf-8";
+
+/* =========================================================
+   BASE
+========================================================= */
+:root {
+  --main-accent: #b68809; /* サイドとメインで共通の赤 */
+}
+
+body {
+  font-family: 'Catamaran', 'Noto Sans JP', sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #2c2c2c;
+  background: #f9f8f6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.section_title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 40px 0 20px;
+  text-align: center;
+}
+
+/* =========================================================
+   HEADER
+========================================================= */
+.header {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.header_inner {
+  max-width: 1100px;
+  margin: auto;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header_logo img {
+  height: 60px;
+}
+
+/* PCナビ */
+.pc_nav ul {
+  display: flex;
+  gap: 20px;
+}
+
+.pc_nav a {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+/* SPメニュー（閉じている状態） */
+.sp_menu {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  padding: 10px 0;
+}
+
+/* 開いたとき */
+.sp_menu.open {
+  display: block;
+  opacity: 1;
+}
+
+/* SPナビ */
+.sp_nav {
+  display: none;
+}
+
+#menu_btn {
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.sp_menu li {
+  padding: 10px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+/* SP表示 */
+@media (max-width: 768px) {
+  .pc_nav {
+    display: none;
+  }
+  .sp_nav {
+    display: block;
+  }
+}
+
+/* =========================================================
+   SLIDER（横スライド）
+========================================================= */
+.slider {
+  height: 60vh; /* 画面の60%の高さ */
+  max-height: 600px; /* 伸びすぎ防止 */
+  overflow: hidden;
+  position: relative;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+  height: 100%;
+}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 前後ボタン */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* ドット */
+.indicators {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #333;
+}
+
+/* SPスライダー比率変更 */
+@media (max-width: 600px) {
+  .slider {
+    height: 40vh; /* スマホは少し低めが美しい */
+    max-height: 300px;
+  }
+
+   .prev, .next {
+    padding: 6px 10px;
+    font-size: 18px;
+  }
+
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+
+}
+
+/* =========================================================
+   ITEM GRID（共通）
+========================================================= */
+.item_grid {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 0 20px;
+}
+
+.item {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06); /* ふんわり影 */
+  transition: transform 0.25s ease, box-shadow 0.25s ease; /* ホバー用 */
+}
+
+/* ホバー時の動き（PCのみ） */
+@media (hover: hover) {
+  .item:hover {
+    transform: translateY(-4px); /* 少し浮く */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12); /* 影が強くなる */
+  }
+}
+
+.item img {
+  width: 100%;
+  aspect-ratio: 1 / 1; /* 正方形に揃える */
+  object-fit: cover;   /* トリミングして綺麗に見せる */
+  display: block;
+  border-radius: 6px;
+  transition: transform 0.4s ease; /* ← これが大事 */
+}
+
+/* ホバー時にズーム（PCのみ） */
+@media (hover: hover) {
+  .item:hover img {
+    transform: scale(1.05); /* ← 5%だけ拡大 */
+  }
+}
+
+.item p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.item p:nth-of-type(2) {
+  font-weight: bold;
+  color: #887f69; /* ブランドカラー */
+}
+
+/* 最近見た商品（小さめ） */
+.item_grid.small {
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+}
+
+/* 商品全体をリンクにする */
+.item_link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =========================================================
+   BREADCRUMB
+========================================================= */
+.breadcrumb {
+  max-width: 1100px;
+  margin: 20px auto;
+  padding: 0 20px;
+  font-size: 14px;
+  color: #666;
+}
+
+.breadcrumb a {
+  color: #666;
+  text-decoration: none;   /* 追加：リンクっぽさを出す */
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline; /* 追加：UI的に親切 */
+}
+
+/* スマホ */
+@media (max-width: 600px) {
+  .breadcrumb {
+    text-align: center;
+    font-size: 13px;
+  }
+}
+
+/* =========================================================
+   CATEGORY VISUAL（list.html）
+========================================================= */
+.category_visual img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  margin-bottom: 20px;
+}
+
+/* =========================================================
+   PRODUCT DETAIL（products.html）
+========================================================= */
+.back_btn {
+  display: inline-block;
+  margin: 20px 0;
+  padding: 8px 16px;
+  background: #eee;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.product_detail_inner {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  display: flex;
+  gap: 40px;
+}
+
+.product_images {
+  flex: 1;
+}
+
+.main_image img {
+  width: 100%;
+  border-radius: 6px;
+}
+
+.thumb_list {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.thumb {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  opacity: 0.6;
+  border-radius: 4px;
+}
+
+.thumb.active {
+  opacity: 1;
+  border: 2px solid #333;
+}
+
+.product_info {
+  flex: 1;
+}
+
+.product_title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product_price {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.product_description {
+  margin-bottom: 20px;
+}
+
+.add_cart_btn {
+  background: #887f69;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* SP：商品詳細を縦並びに */
+@media (max-width: 768px) {
+  .product_detail_inner {
+    flex-direction: column;
+  }
+}
+
+/* =========================================================
+   PAGINATION（list.html）
+========================================================= */
+/* ============================
+   ページネーション（最終形）
+============================ */
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 40px;
+}
+
+.pagination a,
+.pagination span {
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+}
+
+.pagination a:hover {
+  background: #f5f5f5;
+}
+
+.page_numbers {
+  display: flex;
+  gap: 8px;
+}
+
+/* 現在ページ */
+.page_numbers .current {
+  background: #333;
+  color: #fff;
+  border-color: #333;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+.footer {
+  background: #fff;
+  border-top: 1px solid #ddd;
+  margin-top: 40px;
+}
+
+.footer_inner {
+  max-width: 100%;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  border-top: 2px solid #b68809;
+}
+
+/* フッターのリンクの間に「・」を入れる */
+.footer_nav li {
+  display: inline-block;
+  margin: 0 10px;
+  position: relative;
+}
+
+.footer_nav li + li::before {
+  content: "・";
+  position: absolute;
+  left: -12px;
+  top: 50%;
+  transform: translateY(-50%); /* ← これで上下中央に配置 */
+  color: #fff; /* フッターが暗い背景なら白 */
+  font-size: 14px; /* 点の大きさ調整 */
+  line-height: 1;  /* 点の縦位置を安定させる */
+}
+
+
+/* ▼ 横並びにするための追加 */
+.footer_nav {
+  display: flex;
+  justify-content: center;
+  gap: 20px; /* 間隔 */
+  flex-wrap: wrap; /* 幅が狭いときは折り返す */
+  margin-bottom: 10px;
+}
+
+.footer_nav a {
+  font-size: 14px;
+  color: #333;
+  text-decoration: none;
+}
+
+.footer_nav a:hover {
+  text-decoration: underline;
+}
+
+.copy {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* ▼ スマホでは縦並びに */
+@media (max-width: 600px) {
+  .footer_nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* ============================
+   カート全体のレイアウト調整
+   ============================ */
+
+/* カート内の商品一覧の余白 */
+.cart_items {
+  margin-top: 20px; /* 上に余白をつけて見やすく */
+}
+
+/* 商品ブロック（1商品分） */
+.cart_item {
+  display: flex;              /* 横並びにする */
+  align-items: center;        /* 縦位置を中央揃え */
+  gap: 20px;                  /* 各要素の間に余白 */
+  padding: 15px 0;            /* 上下に余白 */
+  border-bottom: 1px solid #ddd; /* 下に薄い線を引いて区切る */
+}
+
+/* 商品画像 */
+.cart_item img {
+  width: 100px;               /* 画像サイズを統一 */
+  height: auto;
+  border-radius: 4px;         /* 角を少し丸くして柔らかい印象に */
+}
+
+/* 商品名や価格の <p> の余白をリセット */
+.cart_item p {
+  margin: 0;
+}
+
+
+/* ============================
+   数量ボタン（＋／−）
+   ============================ */
+
+/* 数量ボタンの囲い */
+.qty_box {
+  display: flex;              /* 横並び */
+  align-items: center;        /* 中央揃え */
+  gap: 10px;                  /* ボタンと数字の間隔 */
+}
+
+/* ＋／− ボタン */
+.qty_box button {
+  width: 32px;                /* 正方形のボタン */
+  height: 32px;
+  border: 1px solid #aaa;     /* 薄い枠線 */
+  background: #f8f8f8;        /* 薄いグレー背景 */
+  cursor: pointer;            /* マウスカーソルを指マークに */
+  font-size: 18px;            /* ＋／− を大きく */
+
+  display: flex;              /* ← これが中央揃えの決め手 */
+  justify-content: center;    /* 横方向の中央 */
+  align-items: center;        /* 縦方向の中央 */
+
+  border-radius: 4px;         /* 少し丸み */
+  padding: 0;                 /* 余白を消してズレ防止 */
+}
+
+/* 数量の数字 */
+.qty_box span {
+  min-width: 20px;            /* 数字の幅を固定して揺れないように */
+  text-align: center;         /* 中央揃え */
+  font-size: 16px;
+}
+
+
+/* ============================
+   削除ボタン
+   ============================ */
+
+.delete_btn {
+  padding: 6px 12px;          /* ボタンの大きさ */
+  background: #ff4d4d;        /* 赤色（注意喚起） */
+  color: #fff;                /* 文字は白 */
+  border: none;
+  border-radius: 4px;         /* 少し丸く */
+  cursor: pointer;
+}
+
+.delete_btn:hover {
+  background: #e60000;        /* ホバー時に濃い赤に */
+}
+
+
+/* ============================
+   合計金額
+   ============================ */
+
+.cart_total {
+  margin-top: 20px;           /* 上に余白 */
+  font-size: 20px;            /* 大きめの文字 */
+  font-weight: bold;          /* 太字で強調 */
+}
+
+
+/* ============================
+   カートを空にするボタン
+   ============================ */
+
+#clear_cart_btn {
+  margin-top: 20px;           /* 上に余白 */
+  padding: 10px 20px;         /* ボタンサイズ */
+  background: #333;           /* 黒に近いグレー */
+  color: #fff;                /* 白文字 */
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#clear_cart_btn:hover {
+  background: #000;           /* ホバーで真っ黒に */
+}
+
+/* ============================
+   スマホ用レイアウト（600px以下）
+   ============================ */
+@media (max-width: 600px) {
+
+  /* 商品ブロックを縦並びにして中央寄せ */
+  .cart_item {
+    flex-direction: column;     /* 横並び → 縦並び */
+    align-items: center;        /* 中央寄せ */
+    text-align: center;         /* テキストも中央寄せ */
+    gap: 15px;                  /* 余白を少し広めに */
+  }
+
+  /* 商品画像を大きめに（見やすく） */
+  .cart_item img {
+    width: 140px;               /* PCより大きめに */
+    height: auto;
+  }
+
+  /* 数量ボタンの位置も中央寄せ */
+  .qty_box {
+    justify-content: center;    /* 横方向の中央寄せ */
+    width: 100%;
+  }
+
+  /* ＋／− ボタンの中央揃え（再確認） */
+  .qty_box button {
+    display: flex;              /* 中央揃えの基本 */
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 削除ボタンを横幅いっぱいにして押しやすく */
+  .delete_btn {
+    width: 100%;
+    max-width: 200px;           /* 大きすぎないように制限 */
+    margin: 0 auto;
+  }
+
+  /* 合計金額も中央寄せ */
+  .cart_total {
+    text-align: center;
+  }
+
+  /* カートを空にするボタンも中央寄せ */
+  #clear_cart_btn {
+    display: block;
+    width: 100%;
+    max-width: 250px;
+    margin: 20px auto;
+    text-align: center;
+  }
+}
+
+/* ▼ ログインページ */
+.login_section {
+  max-width: 400px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.login_section h1 {
+  text-align: center;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.login_form label {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #333;
+}
+
+.login_form input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  box-sizing: border-box;
+}
+
+.login_btn {
+  width: 100%;
+  padding: 12px;
+  background: #333;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.2s;
+}
+
+.login_btn:hover {
+  background: #555;
+}
+
+/* ▼ マイページ（カード型デザイン） */
+.mypage_cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.mypage_card {
+  display: block;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  background: #fff;
+  text-decoration: none;
+  color: #333;
+  transition: 0.2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.mypage_card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.mypage_card h2 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.mypage_card p {
+  font-size: 14px;
+  color: #666;
+}
+
+/* ▼ 文章ページ（ガイド・特商法・プライバシー）共通 */
+.page_section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.page_section h1 {
+  font-size: 26px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.page_section h2 {
+  font-size: 20px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border-left: 4px solid #333;
+  padding-left: 10px;
+}
+
+.page_section p,
+.page_section li {
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+.page_section ul {
+  padding-left: 20px;
+  list-style: disc;
+}
+
+
+/* =========================================================
+   全体レイアウト（2カラム構成）
+   左：スライダー＋商品一覧
+   右：サイドメニュー
+========================================================= */
+.main_wrapper {
+  max-width: 1200px;          /* 全体の最大幅 */
+  margin: 40px auto;          /* 上下40px、左右中央寄せ */
+  display: flex;              /* 横並びにする */
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;                  /* 左右の余白 */
+  padding: 0 20px;            /* 画面端との余白 */
+}
+
+/* 左カラム（スライダー＋NEW ITEMS＋POPULAR ITEMS） */
+.main_content {
+  flex: 1;                    /* 右カラムより広く取る */
+  min-width: 0;               /* スライダーのはみ出し防止 */
+}
+
+/* =========================================================
+   スライダー（左カラムの幅に合わせる）
+========================================================= */
+.slider {
+  width: 100%;
+  height: 350px;              /* デザイン画像に近い高さ */
+  overflow: hidden;
+  position: relative;
+  border-radius: 6px;
+  margin-bottom: 20px;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+/* 前後ボタン */
+.prev, .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
+  border: none;
+  font-size: 28px;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* ドット */
+.indicators {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  border-radius: 50%;
+  margin: 0 4px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background: #333;
+}
+
+/* =========================================================
+   サイドメニュー（右カラム）
+========================================================= */
+.sidebar {
+  width: 260px;               /* デザイン画像に近い幅 */
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* サイドメニューのボックス */
+.sidebar_box {
+  background: #fff;
+  /*border: 1px solid #ddd;*/
+  /*border-radius: 6px;*/
+  padding: 0; /* ← タイトルの帯を端まで広げるために0にする */
+  overflow: hidden; /* ← 角丸を綺麗に見せる */
+  text-align: center;
+}
+
+/* タイトル（白文字＋赤背景の帯） */
+.sidebar_box h2 {
+  background: var(--main-accent);
+  color: #fff;
+  font-size: 18px;
+  font-weight: 700;
+  padding: 12px 16px;
+  margin: 0;
+}
+
+/* ボックス内のコンテンツ部分 */
+.sidebar_box img,
+.sidebar_box p,
+.sidebar_box .more_btn,
+.sidebar_box ul {
+  padding: 0 16px;
+}
+
+/* 画像 */
+.sidebar_box img {
+  width: 100%;
+  margin: 16px 0 10px;
+  border-radius: 4px;
+}
+
+/* 説明文 */
+.sidebar_box p {
+  margin-bottom: 12px;
+  line-height: 1.6;
+}
+
+/* 検索ボックス */
+.sidebar_box input[type="text"] {
+  width: 100%;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 8px;
+}
+
+/* カテゴリ一覧 */
+.sidebar_box ul li {
+  margin-bottom: 10px;
+}
+
+.sidebar_box ul li a {
+  color: #333;
+  text-decoration: none;
+}
+
+.sidebar_box ul li a:hover {
+  text-decoration: underline;
+}
+
+/* ABOUT / SHOP INFO の画像 */
+.sidebar_box img {
+  width: 100%;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+/* MOREボタン（スクショ風） */
+.more_btn {
+  display: block;
+  margin: 8px auto 12px;
+  padding: 6px 12px;
+  border: 1px solid #333;
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  border-radius: 15px;
+  background-color: #b68809;
+  width: 30%;
+}
+
+.more_btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+}
+
+/* =========================================================
+   商品一覧（NEW ITEMS / POPULAR ITEMS）
+========================================================= */
+
+/* セクションタイトル */
+/* メイン側のタイトル（NEW ITEMS / POPULAR ITEMS） */
+.section_title {
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+  margin: 40px 0 30px;
+  position: relative;
+  padding: 8px 0;
+}
+
+/* 左右のライン（固定長でかぶらない） */
+.section_title::before,
+.section_title::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 36%; /* ← 線の長さを固定にする（ここがポイント） */
+  height: 3px;
+  background: var(--main-accent);
+}
+
+.section_title::before {
+  left: 0;
+}
+
+.section_title::after {
+  right: 0;
+}
+
+/* 画像タイトル専用 */
+.section_title_img {
+  text-align: center;
+  margin: 40px 0 30px;
+}
+
+.section_title_img img {
+  display: block;
+  margin: 0 auto;
+  height: 40px; /* 必要に応じて調整 */
+}
+
+/* 商品グリッド（3列） */
+.item_grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+}
+
+/* 商品カード */
+.item {
+  background: #fff;
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 6px;
+  transition: 0.2s;
+}
+
+.item:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+}
+
+/* 商品画像 */
+.item img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+/* 商品名 */
+.item p:first-of-type {
+  font-size: 15px;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+/* 価格 */
+.item p:last-of-type {
+  font-size: 14px;
+  font-weight: bold;
+  color: #444;
+}
+
+/* ============================
+   SHOPPING GUIDE（白いボックス＋2カラム）
+   ============================ */
+/* SHOPPING GUIDE とフッターの間の区切り線 */
+.guide_section {
+  margin: 50px 0;
+}
+
+/* 白い大きなボックス（タイトルの下だけ） */
+.guide_box {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 40px 40px 0;
+  margin-top: 30px;
+  display: flex;
+  gap: 40px;
+}
+
+/* 2カラム */
+.guide_col {
+  flex: 1;
+}
+
+.guide_col h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 10px;
+  color: #b68809;
+}
+
+.guide_col h3 .guide_title{
+  color: #b68809;
+  font-weight: 300;
+}
+
+/* 下のリンク */
+.guide_links {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 25px;
+}
+
+.guide_links a {
+  color: #333;
+  text-decoration: none;
+}
+
+.guide_links a:hover {
+  text-decoration: underline;
+}
+
+/* 1つの項目全体（縦並び） */
+.guide_item {
+  margin-bottom: 24px;
+}
+
+/* 画像コンテナ */
+.guide_img_wrap img {
+  width: 60%; /* 好きなサイズに調整OK */
+  display: block;
+  margin-bottom: 20px;
+}
+
+.guide_text_wrap{
+  margin-bottom: 20px;
+}
+
+/* 見出し（■宅配便） */
+.guide_label {
+  color: #b68809; /* 好きな色に変更OK */
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+/* 説明文 */
+.guide_text {
+  line-height: 1.6;
+}
+
+/* =========================================================
+   スマホレイアウト（1カラム）
+========================================================= */
+@media (max-width: 600px) {
+
+  .main_wrapper {
+    flex-direction: column;
+    gap: 40px;
+    padding: 0 15px;
+  }
+
+  .item_grid {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  .slider {
+    height: 250px;
+  }
+
+  .slide img {
+    height: 250px;
+  }
+}
+
+/* ============================
+   カテゴリー画像（PC）
+============================ */
+.category_visual {
+  width: 100%;
+  margin-bottom: 40px;
+  height: 240px;
+  overflow: hidden;
+}
+
+.category_visual .category_img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* ============================
+   SP（スマホ）用
+============================ */
+@media screen and (max-width: 768px) {
+  .category_visual .category_img {
+    height: 160px;
+    border-radius: 4px;
+  }
+
+}
+
+/* 横並びにする */
+.search_input_wrap {
+  display: flex;
+  align-items: center;
+}
+
+/* 正方形の背景ボックス */
+.search_icon_box {
+  width: 30px;      /* 正方形のサイズ */
+  height: 30px;
+  cursor: pointer;
+  background: #b68809; /* 好きな背景色 */
+  border-radius: 4px; /* 角丸にしたいなら */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px 6px 4px 4px;
+  padding: 4px;
+}
+
+/* アイコン画像 */
+.search_icon {
+  width: auto !important;
+  height: 100% !important;
+  max-width: none !important;
+  max-height: none !important;
+  object-fit: contain;
+}
+
+/* ===========================
+   SP（スマホ）用レイアウト
+=========================== */
+@media screen and (max-width: 768px) {
+
+  .sidebar {
+    display: none;
+  }
+
+  /* ▼ ドロップダウン用CSS（ここに入れる） */
+  .dropdown_content {
+    display: none;
+    padding-left: 16px;
+  }
+
+  .dropdown_btn {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 0;
+  }
+
+  .dropdown_open {
+    display: block;
+  }
+
+  .sp_section_title a {
+    display: block;
+    padding: 10px 0;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+  }
+}
+
+/* ===========================
+   下層ページ（ABOUT / SHOP INFO）
+=========================== */
+
+.page_container {
+  max-width: 700px;
+  margin: 80px auto;
+  padding: 0 20px;
+  line-height: 1.8;
+  color: #333;
+  font-size: 16px;
+}
+
+/* ロゴ */
+.page_logo {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page_logo img {
+  width: 180px;
+}
+
+/* PCサイドバーの黄色帯に寄せたタイトル */
+.page_title {
+  background: #b68809;
+  padding: 10px 14px;
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 24px;
+  letter-spacing: 0.05em;
+  color: white;
+  text-align: center;
+}
+
+/* 写真 */
+.page_image {
+  width: 100%;
+  margin: 0 0 30px;
+  border-radius: 6px;
+}
+
+/* テキスト */
+.page_container p {
+  font-size: 16px;
+  margin-bottom: 24px;
+}
+
+/* スマホ調整 */
+@media screen and (max-width: 768px) {
+  .page_container {
+    margin: 40px 10px;
+    padding: 8px 16px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+
+  }
+
+  .page_logo img {
+    width: 150px;
+  }
+
+  .page_title {
+    font-size: 18px;
+  }
+}
+
+/* SPヘッダー（ロゴ＋ハンバーガー） */
+.sp_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  background-color: white;
+}
+
+.sp_header_logo {
+  width: 80%;
+  height: 60px;
+}
+
+.sp_header_menu {
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* PCでは非表示 */
+@media screen and (min-width: 769px) {
+  .sp_header {
+    display: none;
+  }
+}
+
